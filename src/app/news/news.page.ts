@@ -7,6 +7,7 @@ import { NewsService } from '../news.service';
   styleUrls: ['./news.page.scss'],
 })
 export class NewsPage implements OnInit {
+  data: any;
 
   constructor(private newsService: NewsService) { }
 
@@ -17,6 +18,7 @@ export class NewsPage implements OnInit {
       )
       .subscribe(data => {
         console.log(data);
+        this.data=data;
   
       });
   }
