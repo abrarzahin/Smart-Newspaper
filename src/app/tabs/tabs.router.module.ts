@@ -4,12 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { AboutPage } from '../about/about.page';
 import { ContactPage } from '../contact/contact.page';
+import { NewsPage } from '../news/news.page';
 
 const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
     children: [
+      {
+        path: 'news',
+        outlet: 'news',
+        component: NewsPage
+      },
      
       {
         path: 'about',
@@ -25,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/about',
+    redirectTo: '/tabs/(news:news)',
     pathMatch: 'full'
   }
 ];
